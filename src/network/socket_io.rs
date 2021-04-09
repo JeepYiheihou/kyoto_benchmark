@@ -62,6 +62,7 @@ pub async fn start_benchmark(params: Params) -> crate::Result<()> {
     {
         let total_count = suite.total_count.lock().await;
         println!("total count of requests: {}", total_count);
+        println!("TPS: {}", *total_count / suite.time as u32);
     }
     Ok(())
 }
